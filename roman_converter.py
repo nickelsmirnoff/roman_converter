@@ -16,12 +16,9 @@ def roman(string):
             if char in unnorm_roman.keys():
                 result += int(unnorm_roman[char])
                 i += 1
-    new_str = string.replace('IV','')
-    new_str = new_str.replace('IX','')
-    new_str = new_str.replace('XL','')
-    new_str = new_str.replace('XC','')
-    new_str = new_str.replace('CD','')
-    new_str = new_str.replace('CM','')
+    new_str = string
+    for c in unnorm_roman.keys():
+        new_str = new_str.replace(c,'')
 
     for c in new_str:
         result += int(normal_roman[c])
